@@ -3,7 +3,6 @@
 function Conectar()
 { 
  //$con = mysqli_connect("localhost","my_user","my_password","my_db");
-//$con = mysqli_connect("localhost","frenosja_ime","Alh84001","frenosja_imerepullo");
 $con = mysqli_connect("localhost","laborato_schalper","schalper2021","laborato_schalper");
 if (mysqli_connect_errno())  {  echo "Error al conectar MySQL: " . mysqli_connect_error();  }
 return $con;

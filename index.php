@@ -106,7 +106,8 @@ if(!isset($_SESSION['usuario']))
             <div>
 
                 <h1 class="logo-name">
-                    <img src="images/logo.png" width="400px;">    </h1>
+                    <img src="images/logo.png" width="400px;">
+                </h1>
 
             </div>
           
