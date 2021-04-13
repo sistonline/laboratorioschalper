@@ -10,8 +10,8 @@ include_once('functions.php');
 $con=Conectar();
 $err="";
 $u="";
-/*Captura de login*/
-/*Captura de login*/
+/*Captura de login valenzuelo*/
+
 
 
 
