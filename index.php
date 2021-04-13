@@ -10,7 +10,7 @@ include_once('functions.php');
 $con=Conectar();
 $err="";
 $u="";
-/*Captura de login val*/
+/*Captura de login valen*/
 
 
 
