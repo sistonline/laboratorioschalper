@@ -135,5 +135,5 @@ if(!isset($_SESSION['usuario']))
     <script src="assets/js/bootstrap.min.js"></script>
 
 </body>
-valenzuela si se puede 
+valenzuela si se puede shoro
 </html>
