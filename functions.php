@@ -284,11 +284,28 @@ function crear_usuario( $usuario, $clave, $tipo, $nombre, $email)
 
 
 
-function crear_producto( $nombre, $descripcion, $categoria, $stock,  $precio, $precio_compra, $alerta, $clave) 
+function crear_paciente($rut, $nombres, $apellidop, $apellidom, $fnacimiento, $email, $telefono) 
 {
    $con=Conectar();
-    $fecha=date("Y-m-d");
-  $sql=" INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `categoria`, `stock`, `precio`, `precio_compra`, `alerta`,`palabra_clave`, `fecha_modificacion`) VALUES (NULL,  '$nombre', '$descripcion', '$categoria',  '$stock', '$precio','$precio_compra', '$alerta', '$clave' , '$fecha');";  
+   $fecha=date("Y-m-d");
+ //calcular edad
+    $cumpleanos = new DateTime($fnacimiento);
+    $hoy = new DateTime();
+    $annos = $hoy->diff($cumpleanos);
+    $edad = $annos->y;
+    echo "<script>console.log('Edad: ".$edad."' )</scrip>";    
+//setear numero ficha
+$sqlid="select max(id) as id from pacientes";
+$resultado_id=mysqli_query($con,$sqlid);
+$id=mysqli_fetch_arra($resultado_id, MYSQLI_ASSOC);
+$ficha=$id['id']+1;
+echo "<script>console.log('Ficha a crear: ".$ficha."' )</scrip>";
+
+
+   $sql="INSERT INTO `paciente` (`id`, `rut`, `nombres`, `apellidop`, `apellidom`, `fecha_registro`, `edad`, `numero_ficha`, `fnacimiento`, `email`, `telefono`) 
+   VALUES (NULL, '$rut', '$nombre', '$apellidop', '$aperllidom', 'current_timestamp()', '$edad', '$ficha', '$fnacimiento', '$email', '$telefono');";  
+
+
    	if ($result=mysqli_query($con,$sql))
     { return 1; } 
     else { return 0;}    
