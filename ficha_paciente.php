@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Layouts</title>
+    <title>Ficha Paciente </title>
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -370,23 +370,13 @@
 </div>
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-<<<<<<< HEAD
-        <h2>Layouts</h2>
-        <ol class="breadcrumb">
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li class="active">
-                <strong>Layouts</strong>
-=======
-        <h2>INGRESO PACIENTES</h2>
+        <h2>Ficha Paciente </h2>
         <ol class="breadcrumb">
             <li>
                 <a href="index.html">Inicio</a>
             </li>
             <li class="active">
-                <strong>PACIENTES</strong>
->>>>>>> 09e7c92b9d9c1b27431236d12eaa941247b72f07
+                <strong>Ficha Paciente </strong>
             </li>
         </ol>
     </div>
@@ -402,36 +392,8 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content text-center p-md">
 
-<<<<<<< HEAD
-                    <h2><span class="text-navy">INSPINIA - Responsive Admin Theme</span>
-                    is provided with two main layouts <br/>three skins and separate configure options.</h2>
-
-                    <p>
-                        All config options you can trun on/off from the theme box configuration (green icon on the left side of page).
-                    </p>
-                    <div class="row">
-                <div class="col-lg-8">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Inline form</h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-=======
-                    <h2><span class="text-navy"><b>PACIENTES </b></span></h2>
+                    <h2><span class="text-navy"><b>Ficha Paciente 
+  </b></span></h2>
 
                    
 
@@ -441,246 +403,19 @@
         </div>
     </div>
     <div class="row">
-                <div class="col-lg-8">
+                     <div class="col-lg-8">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Rut del Paciente</h5>
+                            <h5>Buscar N° ficha</h5>
                             <div class="ibox-tools">
                                 
->>>>>>> 09e7c92b9d9c1b27431236d12eaa941247b72f07
                             </div>
                         </div>
                         <div class="ibox-content">
                             <form role="form" class="form-inline">
                                 <div class="form-group">
-<<<<<<< HEAD
-                                    <label for="exampleInputEmail2" class="sr-only">Email address</label>
-                                    <input type="email" placeholder="Enter email" id="exampleInputEmail2"
-                                           class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword2" class="sr-only">Password</label>
-                                    <input type="password" placeholder="Password" id="exampleInputPassword2"
-                                           class="form-control">
-                                </div>
-                                <div class="checkbox m-r-xs">
-                                    <input type="checkbox" id="checkbox1">
-                                    <label for="checkbox1">
-                                        Remember me
-                                    </label>
-                                </div>
-                                <button class="btn btn-white" type="submit">Sign in</button>
-=======
-                                    <label for="rut" class="sr-only">Rut del Paciente</label>
-                                    <input type="text" placeholder="xx.xxx.xxx-x" id="rut" name="rut"
-                                           class="form-control">
-                                </div>
-                                
-                                
-                                <button class="btn btn-white" type="submit">Crear Nuevo</button>
->>>>>>> 09e7c92b9d9c1b27431236d12eaa941247b72f07
-                            </form>
-                        </div>
-                    </div>
-                </div>
-<<<<<<< HEAD
-                <div class="col-lg-4">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Modal form <small>Example of login in modal box</small></h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="ibox-content">
-                            <div class="text-center">
-                            <a data-toggle="modal" class="btn btn-primary" href="#modal-form">Form in simple modal box</a>
-                            </div>
-                            <div id="modal-form" class="modal fade" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Sign in</h3>
-
-                                                    <p>Sign in today for more expirience.</p>
-
-                                                    <form role="form">
-                                                        <div class="form-group"><label>Email</label> <input type="email" placeholder="Enter email" class="form-control"></div>
-                                                        <div class="form-group"><label>Password</label> <input type="password" placeholder="Password" class="form-control"></div>
-                                                        <div>
-                                                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong></button>
-                                                            <label> <input type="checkbox" class="i-checks"> Remember me </label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="col-sm-6"><h4>Not a member?</h4>
-                                                    <p>You can create an account:</p>
-                                                    <p class="text-center">
-                                                        <a href=""><i class="fa fa-sign-in big-icon"></i></a>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-                <div class="col-lg-8">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Inline form</h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-=======
-                <div class="col-lg-8">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Buscar N° Examen</h5>
-                            <div class="ibox-tools">
-                                
->>>>>>> 09e7c92b9d9c1b27431236d12eaa941247b72f07
-                            </div>
-                        </div>
-                        <div class="ibox-content">
-                            <form role="form" class="form-inline">
-                                <div class="form-group">
-<<<<<<< HEAD
-                                    <label for="exampleInputEmail2" class="sr-only">Email address</label>
-                                    <input type="email" placeholder="Enter email" id="exampleInputEmail2"
-                                           class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword2" class="sr-only">Password</label>
-                                    <input type="password" placeholder="Password" id="exampleInputPassword2"
-                                           class="form-control">
-                                </div>
-                                <div class="checkbox m-r-xs">
-                                    <input type="checkbox" id="checkbox1">
-                                    <label for="checkbox1">
-                                        Remember me
-                                    </label>
-                                </div>
-                                <button class="btn btn-white" type="submit">Sign in</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Modal form <small>Example of login in modal box</small></h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="ibox-content">
-                            <div class="text-center">
-                            <a data-toggle="modal" class="btn btn-primary" href="#modal-form">Form in simple modal box</a>
-                            </div>
-                            <div id="modal-form" class="modal fade" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Sign in</h3>
-
-                                                    <p>Sign in today for more expirience.</p>
-
-                                                    <form role="form">
-                                                        <div class="form-group"><label>Email</label> <input type="email" placeholder="Enter email" class="form-control"></div>
-                                                        <div class="form-group"><label>Password</label> <input type="password" placeholder="Password" class="form-control"></div>
-                                                        <div>
-                                                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong></button>
-                                                            <label> <input type="checkbox" class="i-checks"> Remember me </label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="col-sm-6"><h4>Not a member?</h4>
-                                                    <p>You can create an account:</p>
-                                                    <p class="text-center">
-                                                        <a href=""><i class="fa fa-sign-in big-icon"></i></a>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-                <div class="col-lg-8">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Inline form</h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-=======
-                                    <label for="examen" class="sr-only">Buscar n° examen</label>
-                                    <input type="text" placeholder="n° examen" id="examen" name="examen" 
+                                    <label for="ficha" class="sr-only">n° Ficha</label>
+                                    <input type="text" placeholder="n° ficha" id="ficha" name="ficha" 
                                            class="form-control">
                                 </div>
                                
@@ -694,30 +429,11 @@
                             <h5>Buscar x Rut</h5>
                             <div class="ibox-tools">
                                 
->>>>>>> 09e7c92b9d9c1b27431236d12eaa941247b72f07
                             </div>
                         </div>
                         <div class="ibox-content">
                             <form role="form" class="form-inline">
                                 <div class="form-group">
-<<<<<<< HEAD
-                                    <label for="exampleInputEmail2" class="sr-only">Email address</label>
-                                    <input type="email" placeholder="Enter email" id="exampleInputEmail2"
-                                           class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword2" class="sr-only">Password</label>
-                                    <input type="password" placeholder="Password" id="exampleInputPassword2"
-                                           class="form-control">
-                                </div>
-                                <div class="checkbox m-r-xs">
-                                    <input type="checkbox" id="checkbox1">
-                                    <label for="checkbox1">
-                                        Remember me
-                                    </label>
-                                </div>
-                                <button class="btn btn-white" type="submit">Sign in</button>
-=======
                                     <label for="rutpaciente" class="sr-only">RUT</label>
                                     <input type="text" placeholder="xx.xxx.xxx-x" id="rutpaciente" name="rutpaciente"
                                            class="form-control">
@@ -725,98 +441,20 @@
                                 
                                 
                                 <button class="btn btn-white" type="submit">Buscar</button>
->>>>>>> 09e7c92b9d9c1b27431236d12eaa941247b72f07
                             </form>
                         </div>
                     </div>
                 </div>
-<<<<<<< HEAD
-                <div class="col-lg-4">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Modal form <small>Example of login in modal box</small></h5>
-                            <div class="ibox-tools">
-                                <a class="collapse-link">
-                                    <i class="fa fa-chevron-up"></i>
-                                </a>
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fa fa-wrench"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-user">
-                                    <li><a href="#">Config option 1</a>
-                                    </li>
-                                    <li><a href="#">Config option 2</a>
-                                    </li>
-                                </ul>
-                                <a class="close-link">
-                                    <i class="fa fa-times"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="ibox-content">
-                            <div class="text-center">
-                            <a data-toggle="modal" class="btn btn-primary" href="#modal-form">Form in simple modal box</a>
-                            </div>
-                            <div id="modal-form" class="modal fade" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-sm-6 b-r"><h3 class="m-t-none m-b">Sign in</h3>
-
-                                                    <p>Sign in today for more expirience.</p>
-
-                                                    <form role="form">
-                                                        <div class="form-group"><label>Email</label> <input type="email" placeholder="Enter email" class="form-control"></div>
-                                                        <div class="form-group"><label>Password</label> <input type="password" placeholder="Password" class="form-control"></div>
-                                                        <div>
-                                                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Log in</strong></button>
-                                                            <label> <input type="checkbox" class="i-checks"> Remember me </label>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="col-sm-6"><h4>Not a member?</h4>
-                                                    <p>You can create an account:</p>
-                                                    <p class="text-center">
-                                                        <a href=""><i class="fa fa-sign-in big-icon"></i></a>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    
-=======
->>>>>>> 09e7c92b9d9c1b27431236d12eaa941247b72f07
 
 
     </div>
 
-
+    <button class="btn btn-white" type="submit">Agregar Examen</button>
 </div>
 <div class="footer" >
-<<<<<<< HEAD
-    <div class="pull-right">
-        10GB of <strong>250GB</strong> Free.
-    </div>
-    <div>
-        <strong>Copyright</strong> Example Company &copy; 2014-2015
-=======
     
     <div>
         <strong>Copyright</strong> <b><a href="https://sistonline.cl" class="text-navy" >sistonline.cl </a> &copy; 2021 </b>
->>>>>>> 09e7c92b9d9c1b27431236d12eaa941247b72f07
     </div>
 </div>
 
