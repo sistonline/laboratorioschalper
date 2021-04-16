@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Layouts</title>
+    <title>Ficha Paciente </title>
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -370,13 +370,13 @@
 </div>
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>INGRESO PACIENTES</h2>
+        <h2>Ficha Paciente </h2>
         <ol class="breadcrumb">
             <li>
                 <a href="index.html">Inicio</a>
             </li>
             <li class="active">
-                <strong>PACIENTES</strong>
+                <strong>Ficha Paciente </strong>
             </li>
         </ol>
     </div>
@@ -392,7 +392,8 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content text-center p-md">
 
-                    <h2><span class="text-navy"><b>PACIENTES </b></span></h2>
+                    <h2><span class="text-navy"><b>Ficha Paciente 
+  </b></span></h2>
 
                    
 
@@ -402,10 +403,10 @@
         </div>
     </div>
     <div class="row">
-                <div class="col-lg-8">
+                     <div class="col-lg-8">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>Rut del Paciente</h5>
+                            <h5>Buscar N° ficha</h5>
                             <div class="ibox-tools">
                                 
                             </div>
@@ -413,30 +414,8 @@
                         <div class="ibox-content">
                             <form role="form" class="form-inline">
                                 <div class="form-group">
-                                    <label for="rut" class="sr-only">Rut del Paciente</label>
-                                    <input type="text" placeholder="xx.xxx.xxx-x" id="rut" name="rut"
-                                           class="form-control">
-                                </div>
-                                
-                                
-                                <button class="btn btn-white" type="submit">Crear Nuevo</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <div class="ibox float-e-margins">
-                        <div class="ibox-title">
-                            <h5>Buscar N° Examen</h5>
-                            <div class="ibox-tools">
-                                
-                            </div>
-                        </div>
-                        <div class="ibox-content">
-                            <form role="form" class="form-inline">
-                                <div class="form-group">
-                                    <label for="examen" class="sr-only">Buscar n° examen</label>
-                                    <input type="text" placeholder="n° examen" id="examen" name="examen" 
+                                    <label for="ficha" class="sr-only">n° Ficha</label>
+                                    <input type="text" placeholder="n° ficha" id="ficha" name="ficha" 
                                            class="form-control">
                                 </div>
                                
@@ -470,7 +449,7 @@
 
     </div>
 
-
+    <button class="btn btn-white" type="submit">Agregar Examen</button>
 </div>
 <div class="footer" >
     
