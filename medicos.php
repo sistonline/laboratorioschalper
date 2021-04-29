@@ -401,7 +401,7 @@
                 </div>
             </div>
         </div>
-    </di  
+    </div>
 
     </div>
 
@@ -422,7 +422,7 @@
 </div>
 <div class="footer" >
     
-    <div>
+    <div class="feo">   
         <strong>Copyright</strong> <b><a href="https://sistonline.cl" class="text-navy" >sistonline.cl </a> &copy; 2021 </b>
     </div>
 </div>
