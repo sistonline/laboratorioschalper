@@ -1,0 +1,18 @@
+    funciones
+ ==============
+
+ crear_usuario( $tipo, $nombre, $user, $pass)
+ borrar_usuario($id)
+ existe($usuario)
+ datos_usuario($user,$con)
+ verificar_login($usuario,$password,$con)
+ fechaactual()  //devuelve en formato Y-m-d
+ crear_paciente($rut, $nombres, $apellido_paterno, $apellido_materno, $fecha_nacimiento, $email, $telefono, $sexo)
+ datos_paciente($rut) // devuelve $info['todos_los_rows']
+ edad_paciente($rut) // devuelve la edad en numero ej: $edad= $edad_paciente($rut); // retorna 43 para valenzuelo 
+ actualizar_paciente($rut, $nombres, $apellido_paterno, $apellido_materno, $fecha_nacimiento, $email, $telefono, $sexo)
+ eliminar_paciente ($rut)  // elimina desde la base de datos al paciente, pero no los asociados ( biopsia, examen, quedan el la base pero no accesibles)
+ crear_biopsia($rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_micro,$resultado_critico,$prestamo_material,$fecha_prestamo,$fecha_devolucion,$patologo,$procedencia,$muestra_de,$diagnostico_clinico,$fecha_recepcion,$fecha_informe,$creado_por)
+datos_biopsia($id_examen) // devuelve $info['todos_los_rows']
+actualizar_biopsia($id_examen, $rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_micro,$resultado_critico,$prestamo_material,$fecha_prestamo,$fecha_devolucion,$patologo,$procedencia,$muestra_de,$diagnostico_clinico,$fecha_recepcion,$fecha_informe,$creado_por)
+

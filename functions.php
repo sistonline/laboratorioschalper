@@ -1,5 +1,5 @@
 <?php 
-
+/***********************************************************************************/
 /*
  ██████╗ ██████╗ ███╗   ██╗███████╗██╗  ██╗██╗ ██████╗ ███╗   ██╗
 ██╔════╝██╔═══██╗████╗  ██║██╔════╝╚██╗██╔╝██║██╔═══██╗████╗  ██║
@@ -9,7 +9,7 @@
  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
                                                                  
 */
-
+/***********************************************************************************/
 
 function Conectar()
 { 
@@ -23,6 +23,7 @@ function Desconectar($con)
     mysqli_close($con);
 }
 
+/***********************************************************************************/
 
 /*██╗   ██╗███████╗██╗   ██╗ █████╗ ██████╗ ██╗ ██████╗ ███████╗
 /*██║   ██║██╔════╝██║   ██║██╔══██╗██╔══██╗██║██╔═══██╗██╔════╝
@@ -46,22 +47,21 @@ function crear_usuario( $tipo, $nombre, $user, $pass)
        return 1; 
         
     } 
-    else { return 0;}   
-    
+    else { return 0;}       
 }
+
 /***********************************************************************************/
+
 function borrar_usuario($id)
 {
     $con=Conectar();
     $sql = "DELETE FROM usuario WHERE id='$id'";
    	if (mysqli_query($con,$sql))
     {
-      if(existe_id($id)==0){return 0;}
-        else {return 1;}
-        
+      if(existe($id)==0){return 0;}
+        else {return 1;}        
     }
-    else {return 1;}
-    
+    else {return 0;}    
 }
 
 /***********************************************************************************/
@@ -75,8 +75,7 @@ function existe($usuario)
   {   $count=mysqli_num_rows($result);}
     	if($count == 1)
 		{            
-          
-            return 1;
+          return 1;
         }
 		else { return 0; }
         mysqli_free_result($result);
@@ -85,7 +84,7 @@ function existe($usuario)
 /***********************************************************************************/
        function datos_usuario($user,$con)
        {
-          
+          $con=Conectar();
           $sql = "SELECT * FROM usuarios WHERE user='$user'"; 
           $result=mysqli_query($con,$sql);
           $info=mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -94,7 +93,8 @@ function existe($usuario)
        
   /***********************************************************************************/     
        function verificar_login($usuario,$password,$con)
-           {
+           {   
+               $con=Conectar();
                $result=0;
                $count=0;  
                $sql = "SELECT * FROM usuarios WHERE user='$usuario' and pass='$password'";
@@ -129,6 +129,8 @@ function existe($usuario)
 /*╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚══════╝
 /*                                                                      */
 
+/***********************************************************************************/
+
 function crear_paciente($rut, $nombres, $apellido_paterno, $apellido_materno, $fecha_nacimiento, $email, $telefono, $sexo) 
 {
    $con=Conectar();
@@ -138,27 +140,121 @@ function crear_paciente($rut, $nombres, $apellido_paterno, $apellido_materno, $f
     $hoy = new DateTime();
     $annos = $hoy->diff($cumpleanos);
     $edad = $annos->y;
-    echo "<script>console.log('Edad: ".$edad."' )</scrip>";    
-//setear numero ficha
-$sqlid="select max(id) as id from paciente";
-$resultado_id=mysqli_query($con,$sqlid);
-$id=mysqli_fetch_arra($resultado_id, MYSQLI_ASSOC);
-$ficha=$id['id']+1;
-echo "<script>console.log('Ficha a crear: ".$ficha."')</scrip>";
-   $sql="INSERT INTO `paciente` (`rut`, `nombres`, `apellido_paterno`, `apellido_materno`, `fecha_nacimiento`, `email`, `telefono`, `sexo`, `fecha_creacion`) VALUES ('$rut', '$nombres', '$apellido_paterno', '$apellido_materno', '$fecha_nacimiento', '$email', '$telefono', '$sexo', '$fecha');";  
-   	if ($result=mysqli_query($con,$sql))
-    { return 1; } 
-    else { return 0;}    
+    echo "<script>console.log('Edad: ".$edad."' )</scrip>";
+    $sqlid="select max(id) as id from paciente";
+    $resultado_id=mysqli_query($con,$sqlid);
+    $id=mysqli_fetch_arra($resultado_id, MYSQLI_ASSOC);
+    $ficha=$id['id']+1;
+    echo "<script>console.log('Ficha a crear: ".$ficha."')</scrip>";
+    $sql="INSERT INTO `paciente` (`rut`, `nombres`, `apellido_paterno`, `apellido_materno`, `fecha_nacimiento`, `email`, `telefono`, `sexo`, `fecha_creacion`) VALUES ('$rut', '$nombres', '$apellido_paterno', '$apellido_materno', '$fecha_nacimiento', '$email', '$telefono', '$sexo', '$fecha');";  
+        if ($result=mysqli_query($con,$sql))
+        { return 1; } 
+        else { return 0;}    
 }
 
 /***********************************************************************************/
 
+function datos_paciente($rut)
+{
+   $con=Conectar();
+   $sql = "SELECT * FROM paciente WHERE rut='$rut'"; 
+   $result=mysqli_query($con,$sql);
+   $info=mysqli_fetch_array($result,MYSQLI_ASSOC);
+    return $info;
+}
+
+/***********************************************************************************/
+
+function edad_paciente($rut)
+{
+$con=Conectar();
+$sql="SELECT * FROM paciente WHERE rut='$rut'";
+$result=mysqli_query($con,$sql);
+$info=mysqli_fetch_array($result,MYSQLI_ASSOC);
+$date=$info['fecha_nacimiento'];
+$cumpleanos = new DateTime($fecha_nacimiento);
+$hoy = new DateTime();
+$annos = $hoy->diff($cumpleanos);
+$edad = $annos->y;
+return $edad;
+}
+/***********************************************************************************/
+
+function actualizar_paciente($rut, $nombres, $apellido_paterno, $apellido_materno, $fecha_nacimiento, $email, $telefono, $sexo)
+{
+$con=Conectar();
+$sql_update="UPDATE `paciente` SET `nombres` = '$nombre', `apellido_paterno` = '$apellido_paterno', `apellido_materno` = '$apellido_materno', `fecha_nacimiento` = '$fecha_nacimiento', `email` = '$email', `telefono` = '$telefono', `sexo` = '$sexo' WHERE `paciente`.`rut` = '$rut';";
+if ($result=mysqli_query($con,$sql_update))
+{
+return 1;
+}
+else {return 0;}
+}
+
+/***********************************************************************************/
+
+function eliminar_paciente ($rut)
+    {
+        $con=Conectar();
+        $sql = "DELETE FROM paciente WHERE rut='$rut'";
+        if (mysqli_query($con,$sql))
+        {
+          else {return 1;}
+            
+        }
+        else {return 0;}        
+    }
+
+/***********************************************************************************/
 
 
+/***********************************************************************************/
 
+/*██████╗ ██╗ ██████╗ ██████╗ ███████╗██╗ █████╗ 
+/*██╔══██╗██║██╔═══██╗██╔══██╗██╔════╝██║██╔══██╗
+/*██████╔╝██║██║   ██║██████╔╝███████╗██║███████║
+/*██╔══██╗██║██║   ██║██╔═══╝ ╚════██║██║██╔══██║
+/*██████╔╝██║╚██████╔╝██║     ███████║██║██║  ██║
+/*╚═════╝ ╚═╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝╚═╝  ╚═╝
+/*                                               */
+/***********************************************************************************/
 
+function crear_biopsia($rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_micro,$resultado_critico,$prestamo_material,$fecha_prestamo,$fecha_devolucion,$patologo,$procedencia,$muestra_de,$diagnostico_clinico,$fecha_recepcion,$fecha_informe,$creado_por)
+{
+    $con=Conectar();
+    $sql="INSERT INTO `biopsia` (`id_examen`, `rut_paciente`, `solicitado_por`, `tipo_examen`, `examen_macro`, `examen_micro`, `resultado_critico`, `prestamo_material`, `fecha_prestamo`, `fecha_devolucion`, `patologo`, `procedencia`, `muestra_de`, `diagnostico_clinico`, `fecha_recepcion`, `fecha_informe`, `creado_por`) VALUES (NULL, '$rut', '$solicitado_por', '$tipo_examen', '$examen_macro', '$examen_micro', '$resultado_critico', '$prestamo_material', '$fecha_prestamo', '$fecha_devolucion', '$patologo', '   $procedencia', '$muestra_de', ' $diagnostico_clinico', '$fecha_recepcion', '$fecha_informe', '$creado_por');";
+    if ($result=mysqli_query($con,$sql))
+    { return 1; } 
+    else { return 0;} 
+}
 
+/***********************************************************************************/
 
+function datos_biopsia($id_examen)
+{
+
+    $con=Conectar();
+    $sql = "SELECT * FROM biopsia WHERE id_examen='$id_examen'"; 
+    $result=mysqli_query($con,$sql);
+    $info=mysqli_fetch_array($result,MYSQLI_ASSOC);
+     return $info;
+
+}
+
+/***********************************************************************************/
+ 
+function actualizar_biopsia($id_examen, $rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_micro,$resultado_critico,$prestamo_material,$fecha_prestamo,$fecha_devolucion,$patologo,$procedencia,$muestra_de,$diagnostico_clinico,$fecha_recepcion,$fecha_informe,$creado_por)
+{
+$con=Conectar();
+$sql_update="UPDATE `biopsia` SET `solicitado_por` = '$solicitado_por', `tipo_examen` = '$tipo_examen', `examen_macro` = '$examen_macro', `examen_micro` = '$examen_micro', `resultado_critico` = '$resultado_critico', `prestamo_material` = '$prestamo_material', `fecha_prestamo` = '$fecha_prestamo', `fecha_devolucion` = '$fecha_devolucion', `patologo` = '$patologo', `procedencia` = '$procedencia', `muestra_de` = '$muestra_de', `diagnostico_clinico` = '$diagnostico_clinico', `fecha_recepcion` = '$fecha_recepcion', `fecha_informe` = '$fecha_informe', `creado_por` = '$creado_por' WHERE `biopsia`.`id_examen` = '$id_examen';";
+if ($result=mysqli_query($con,$sql_update))
+{
+return 1;
+}
+else {return 0;}
+}
+
+/***********************************************************************************/
 
 /*
 foreach ($_POST as $key => $input_arr)
@@ -194,4 +290,7 @@ function limpiarCadena($valor)
 	$valor = str_ireplace("&","",$valor);
 	return $valor;
 }
+
+
+
 ?>
