@@ -14,7 +14,8 @@
 function Conectar()
 { 
  //$con = mysqli_connect("localhost","my_user","my_password","my_db");
-$con = mysqli_connect("localhost","csi42276_schalper","Alh_84;3","csi42276_schalper");
+//$con = mysqli_connect("localhost","csi42276_schalper","Alh_84;3","csi42276_schalper"); //servidor remoto
+$con = mysqli_connect("localhost","csi42276_schalper","Alh_84;3","schalper"); ///servidor local
 if (mysqli_connect_errno())  {  echo "Error al conectar MySQL: " . mysqli_connect_error();  }
 return $con;
 }
@@ -212,7 +213,7 @@ function eliminar_paciente ($rut)
         $sql = "DELETE FROM paciente WHERE rut='$rut'";
         if (mysqli_query($con,$sql))
         {
-          else {return 1;}
+          return 1;
             
         }
         else {return 0;}        
