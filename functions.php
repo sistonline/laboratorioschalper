@@ -152,6 +152,19 @@ function crear_paciente($rut, $nombres, $apellido_paterno, $apellido_materno, $f
         else { return 0;}    
 }
 
+function crear_paciente_vacio($rut) 
+{
+   $con=Conectar();
+   $fecha=date("Y-m-d");   
+    $hoy = new DateTime();
+    $sql="INSERT INTO `paciente` (`rut`, `fecha_creacion`) VALUES ('$rut', '$fecha');";  
+        if ($result=mysqli_query($con,$sql))
+        { return 1; } 
+        else { return 0;}    
+}
+
+
+
 /***********************************************************************************/
 
 function datos_paciente($rut)
@@ -209,20 +222,19 @@ function eliminar_paciente ($rut)
 
 
 /***********************************************************************************/
-
-/*██████╗ ██╗ ██████╗ ██████╗ ███████╗██╗ █████╗ 
-/*██╔══██╗██║██╔═══██╗██╔══██╗██╔════╝██║██╔══██╗
-/*██████╔╝██║██║   ██║██████╔╝███████╗██║███████║
-/*██╔══██╗██║██║   ██║██╔═══╝ ╚════██║██║██╔══██║
-/*██████╔╝██║╚██████╔╝██║     ███████║██║██║  ██║
-/*╚═════╝ ╚═╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝╚═╝  ╚═╝
-/*                                               */
+/*███████╗██╗  ██╗ █████╗ ███╗   ███╗███████╗███╗   ██╗███████╗███████╗
+/*██╔════╝╚██╗██╔╝██╔══██╗████╗ ████║██╔════╝████╗  ██║██╔════╝██╔════╝
+/*█████╗   ╚███╔╝ ███████║██╔████╔██║█████╗  ██╔██╗ ██║█████╗  ███████╗
+/*██╔══╝   ██╔██╗ ██╔══██║██║╚██╔╝██║██╔══╝  ██║╚██╗██║██╔══╝  ╚════██║
+/*███████╗██╔╝ ██╗██║  ██║██║ ╚═╝ ██║███████╗██║ ╚████║███████╗███████║
+/*╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝
+/*                                                                     */
 /***********************************************************************************/
 
-function crear_biopsia($rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_micro,$resultado_critico,$prestamo_material,$fecha_prestamo,$fecha_devolucion,$patologo,$procedencia,$muestra_de,$diagnostico_clinico,$fecha_recepcion,$fecha_informe,$creado_por)
+function crear_examen($rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_micro,$resultado_critico,$prestamo_material,$fecha_prestamo,$fecha_devolucion,$patologo,$procedencia,$muestra_de,$diagnostico_clinico,$fecha_recepcion,$fecha_informe,$creado_por)
 {
     $con=Conectar();
-    $sql="INSERT INTO `biopsia` (`id_examen`, `rut_paciente`, `solicitado_por`, `tipo_examen`, `examen_macro`, `examen_micro`, `resultado_critico`, `prestamo_material`, `fecha_prestamo`, `fecha_devolucion`, `patologo`, `procedencia`, `muestra_de`, `diagnostico_clinico`, `fecha_recepcion`, `fecha_informe`, `creado_por`) VALUES (NULL, '$rut', '$solicitado_por', '$tipo_examen', '$examen_macro', '$examen_micro', '$resultado_critico', '$prestamo_material', '$fecha_prestamo', '$fecha_devolucion', '$patologo', '   $procedencia', '$muestra_de', ' $diagnostico_clinico', '$fecha_recepcion', '$fecha_informe', '$creado_por');";
+    $sql="INSERT INTO `examenes` (`id_examen`, `rut_paciente`, `solicitado_por`, `tipo_examen`, `examen_macro`, `examen_micro`, `resultado_critico`, `prestamo_material`, `fecha_prestamo`, `fecha_devolucion`, `patologo`, `procedencia`, `muestra_de`, `diagnostico_clinico`, `fecha_recepcion`, `fecha_informe`, `creado_por`) VALUES (NULL, '$rut', '$solicitado_por', '$tipo_examen', '$examen_macro', '$examen_micro', '$resultado_critico', '$prestamo_material', '$fecha_prestamo', '$fecha_devolucion', '$patologo', '   $procedencia', '$muestra_de', ' $diagnostico_clinico', '$fecha_recepcion', '$fecha_informe', '$creado_por');";
     if ($result=mysqli_query($con,$sql))
     { return 1; } 
     else { return 0;} 
@@ -230,11 +242,22 @@ function crear_biopsia($rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_m
 
 /***********************************************************************************/
 
-function datos_biopsia($id_examen)
+function crear_examen_vacio($rut,$creado_por)
+{
+    $con=Conectar();
+    $sql="INSERT INTO `examenes` (`id_examen`, `rut_paciente`, `creado_por`) VALUES (NULL, '$rut', '$creado_por');";
+    if ($result=mysqli_query($con,$sql))
+    { return 1; } 
+    else { return 0;} 
+}
+
+/***********************************************************************************/
+
+function datos_examen($id_examen)
 {
 
     $con=Conectar();
-    $sql = "SELECT * FROM biopsia WHERE id_examen='$id_examen'"; 
+    $sql = "SELECT * FROM examenes WHERE id_examen='$id_examen'"; 
     $result=mysqli_query($con,$sql);
     $info=mysqli_fetch_array($result,MYSQLI_ASSOC);
      return $info;
@@ -243,16 +266,18 @@ function datos_biopsia($id_examen)
 
 /***********************************************************************************/
  
-function actualizar_biopsia($id_examen, $rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_micro,$resultado_critico,$prestamo_material,$fecha_prestamo,$fecha_devolucion,$patologo,$procedencia,$muestra_de,$diagnostico_clinico,$fecha_recepcion,$fecha_informe,$creado_por)
+function actualizar_examen($id_examen, $rut,$solicitado_por,$tipo_examen,$examen_macro,$examen_micro,$resultado_critico,$prestamo_material,$fecha_prestamo,$fecha_devolucion,$patologo,$procedencia,$muestra_de,$diagnostico_clinico,$fecha_recepcion,$fecha_informe,$creado_por)
 {
 $con=Conectar();
-$sql_update="UPDATE `biopsia` SET `solicitado_por` = '$solicitado_por', `tipo_examen` = '$tipo_examen', `examen_macro` = '$examen_macro', `examen_micro` = '$examen_micro', `resultado_critico` = '$resultado_critico', `prestamo_material` = '$prestamo_material', `fecha_prestamo` = '$fecha_prestamo', `fecha_devolucion` = '$fecha_devolucion', `patologo` = '$patologo', `procedencia` = '$procedencia', `muestra_de` = '$muestra_de', `diagnostico_clinico` = '$diagnostico_clinico', `fecha_recepcion` = '$fecha_recepcion', `fecha_informe` = '$fecha_informe', `creado_por` = '$creado_por' WHERE `biopsia`.`id_examen` = '$id_examen';";
+$sql_update="UPDATE `examenes` SET `solicitado_por` = '$solicitado_por', `tipo_examen` = '$tipo_examen', `examen_macro` = '$examen_macro', `examen_micro` = '$examen_micro', `resultado_critico` = '$resultado_critico', `prestamo_material` = '$prestamo_material', `fecha_prestamo` = '$fecha_prestamo', `fecha_devolucion` = '$fecha_devolucion', `patologo` = '$patologo', `procedencia` = '$procedencia', `muestra_de` = '$muestra_de', `diagnostico_clinico` = '$diagnostico_clinico', `fecha_recepcion` = '$fecha_recepcion', `fecha_informe` = '$fecha_informe', `creado_por` = '$creado_por' WHERE `biopsia`.`id_examen` = '$id_examen';";
 if ($result=mysqli_query($con,$sql_update))
 {
 return 1;
 }
 else {return 0;}
 }
+
+
 
 /***********************************************************************************/
 
